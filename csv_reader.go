@@ -101,6 +101,10 @@ func (csvData CSV) Scan(row int, v interface{}) error {
 	return nil
 }
 
+func (csvData CSV) TotalRows() int {
+	return len(csvData.Rows)
+}
+
 func ReadFile(csvFile *os.File) (CSV, error) {
 	csvData := CSV{
 		Header: map[string]int{},
