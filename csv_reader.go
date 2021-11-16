@@ -105,6 +105,10 @@ func (csvData CSV) TotalRows() int {
 	return len(csvData.Rows)
 }
 
+func (csvData CSV) TotalColumns() int {
+	return len(csvData.Header)
+}
+
 func ReadFile(csvFile *os.File) (CSV, error) {
 	csvData := CSV{
 		Header: map[string]int{},
